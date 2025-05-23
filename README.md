@@ -10,11 +10,11 @@
 # Создание и публикация образа для backend
 ```bash
 cd backend
-docker build --platform linux/amd64 -t grozzzny/api-kupipodariday:v1.1 .
+docker build --platform linux/amd64 -t grozzzny/api-kupipodariday:v1.2 .
 # Тест на локальной машине:
-docker run --rm -it --env-file .env -p 4000:3000 --name back grozzzny/api-kupipodariday:v1.1
+docker run --rm -it --env-file .env -p 4000:3000 --name back grozzzny/api-kupipodariday:v1.2
 # Публикация
-docker push grozzzny/api-kupipodariday:v1.1
+docker push grozzzny/api-kupipodariday:v1.2
 ```
 
 # Создание и публикация образа для frontend
