@@ -32,6 +32,6 @@ docker push grozzzny/kupipodariday:v1.0
 # Копирование .env.production и docker-compose.yml
 scp -P 19 .env.production docker-compose.yml developer@79.132.138.8:/home/developer/projects/kupipodariday/
 # Запуск контейнеров
-ssh -p 19 developer@79.132.138.8 "cd /home/developer/projects/kupipodariday/ && docker-compose --env-file .env.production up -d"
+ssh -p 19 developer@79.132.138.8 "cd /home/developer/projects/kupipodariday/ && docker compose --env-file .env.production up -d"
 ```
 
