@@ -10,7 +10,7 @@ COPY . .
 RUN yarn build
 
 
-FROM nginx:latest as production
+FROM nginx:alpine as production
 WORKDIR /app
 
 COPY --from=builder /app/build/ /app/

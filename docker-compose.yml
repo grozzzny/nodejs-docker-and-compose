@@ -3,7 +3,7 @@ version: '3.9'
 services:
   frontend:
     container_name: frontend
-    image: grozzzny/kupipodariday:v1.0
+    image: grozzzny/kupipodariday:v1.1
     restart: always
     ports:
       - '8081:80'
@@ -12,7 +12,7 @@ services:
         condition: service_started
   backend:
     container_name: backend
-    image: grozzzny/api-kupipodariday:v1.0
+    image: grozzzny/api-kupipodariday:v1.1
     restart: always
     ports:
       - '4000:3000'
@@ -34,18 +34,7 @@ services:
     volumes:
       - postgresdata:/var/lib/postgresql/data
     healthcheck:
-      test:
-        [
-          'CMD-SHELL',
-          'pg_isready',
-          '-q',
-          '-h',
-          'localhost',
-          '-p',
-          '${POSTGRES_PASSWORD}',
-          '-U',
-          '${POSTGRES_USER}',
-        ]
+      test: ['CMD-SHELL', 'pg_isready -q -h localhost -p 5432 -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
       interval: 10s
       timeout: 5s
       retries: 5

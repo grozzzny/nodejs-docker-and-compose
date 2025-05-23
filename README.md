@@ -10,21 +10,21 @@
 # Создание и публикация образа для backend
 ```bash
 cd backend
-docker build -t grozzzny/api-kupipodariday:v1.0 .
+docker build --platform linux/amd64 -t grozzzny/api-kupipodariday:v1.1 .
 # Тест на локальной машине:
-docker run --rm -it --env-file .env -p 4000:3000 --name back grozzzny/api-kupipodariday:v1.0
+docker run --rm -it --env-file .env -p 4000:3000 --name back grozzzny/api-kupipodariday:v1.1
 # Публикация
-docker push grozzzny/api-kupipodariday:v1.0
+docker push grozzzny/api-kupipodariday:v1.1
 ```
 
 # Создание и публикация образа для frontend
 ```bash
 cd frontend
-docker build -t grozzzny/kupipodariday:v1.0 .
+docker build --platform linux/amd64 -t grozzzny/kupipodariday:v1.1 .
 # Тест на локальной машине:
-docker run --rm -it -p 8081:80 --name front grozzzny/kupipodariday:v1.0
+docker run --rm -it -p 8081:80 --name front grozzzny/kupipodariday:v1.1
 # Публикация
-docker push grozzzny/kupipodariday:v1.0
+docker push grozzzny/kupipodariday:v1.1
 ```
 
 # Развертывание образов на сервере
