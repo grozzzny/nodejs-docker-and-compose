@@ -1,10 +1,8 @@
 ARG NODE_VERSION=22.14.0
 
-FROM node:$NODE_VERSION-alpine as base
+FROM node:$NODE_VERSION-alpine as builder
 
 WORKDIR /app
-
-FROM base as builder
 
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
